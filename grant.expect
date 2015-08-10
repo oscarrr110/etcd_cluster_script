@@ -1,0 +1,24 @@
+#!/usr/bin/expect
+set timeout 10
+set username [lindex $argv 0]
+set password [lindex $argv 1]
+set root_password [lindex $argv 2]
+if { $username == "root" } {
+   spawn etcdctl user add $username
+   expect {
+    "*assword:"
+    {
+       send "$password\n"
+    }
+   }
+} else {
+   spawn etcdctl -u root:$root_password user add $username
+   expect {
+    "*assword:"
+    {
+       send "$password\n"
+    }
+   }
+}
+expect "*created"
+expect eof

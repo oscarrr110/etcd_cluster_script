@@ -1,0 +1,25 @@
+etcd1:
+    image: 'etcd/base_image'
+    ports:
+       - "2382:2379"
+    hostname: etcd1.server.com
+    #env_file: ./common.env
+    environment:
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/82f939dcbda08fa4f60e7026fcd29094
+    command: /tmp/start_etcd.sh
+etcd2:
+    image: 'etcd/base_image'
+    ports:
+       - "2380:2379"
+    hostname: etcd2.server.com
+    environment:
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/82f939dcbda08fa4f60e7026fcd29094
+    command: /tmp/start_etcd.sh
+etcd3:
+    image: 'etcd/base_image'
+    ports:
+       - "2381:2379"
+    hostname: etcd3.server.com
+    environment:
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/82f939dcbda08fa4f60e7026fcd29094
+    command: /tmp/start_etcd.sh
