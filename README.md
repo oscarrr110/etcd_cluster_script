@@ -6,9 +6,9 @@ Format: start_etcd_cluster.sh <ROOT_PASSWORD> <NEW_USER_NAME> <NEW_USER_ROLE> <G
 Example: start_etcd_cluster.sh  1111 tuhu 0810 test
 ```
 
-## Details (start_etcd_cluster.sh)
+## Details (start_etcd_cluster.sh),Star up script(start_etcd_cluster.sh), Include following step
 
-### 1. Star up script(start_etcd_cluster.sh), Include following step
+### build the basic image ,  which is described as Dockerfile
 
 Install necessary packages for etcd
 
