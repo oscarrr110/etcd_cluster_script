@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function init_user_and_password() {   
-
-    ./grant.expect root $ROOT_PASSWORD
+    CURRENT=`dirname $0`
+    $CURRENT/grant.expect root $ROOT_PASSWORD
     etcdctl -u root:$ROOT_PASSWORD auth enable
     etcdctl -u root:$ROOT_PASSWORD role add $NEW_USER_ROLE
-    ./grant.expect $NEW_USER_NAME $NEW_USER_NAME $ROOT_PASSWORD
+    $CURRENT/grant.expect $NEW_USER_NAME $NEW_USER_NAME $ROOT_PASSWORD
     etcdctl -u root:$ROOT_PASSWORD user grant $NEW_USER_NAME -roles $NEW_USER_ROLE
     #etcdctl -u root:$ROOT_PASSWORD role grant $NEW_USER_ROLE  -path '/\$GRANT_PATH_DIR/*' -readwrite
     etcdctl -u root:$ROOT_PASSWORD role grant $NEW_USER_ROLE  -path /$GRANT_PATH_DIR/* -readwrite

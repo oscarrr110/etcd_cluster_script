@@ -6,7 +6,7 @@ etcd1:
     #env_file: ./common.env
     environment:
         - DISCOVERY_SERVICE=$DISCOVERY_SERVICE
-    command: /tmp/start_etcd.sh
+    command: /etcd/init/start_etcd.sh
 etcd2:
     image: 'etcd/base_image'
     ports:
@@ -14,7 +14,7 @@ etcd2:
     hostname: etcd2.server.com
     environment:
         - DISCOVERY_SERVICE=$DISCOVERY_SERVICE
-    command: /tmp/start_etcd.sh
+    command: /etcd/init/start_etcd.sh
 etcd3:
     image: 'etcd/base_image'
     ports:
@@ -22,4 +22,4 @@ etcd3:
     hostname: etcd3.server.com
     environment:
         - DISCOVERY_SERVICE=$DISCOVERY_SERVICE
-    command: /tmp/start_etcd.sh
+    command: /etcd/init/start_etcd.sh

@@ -1,7 +1,7 @@
 #!/bin/sh
 IP=`cat /etc/hosts | head -n 1 |awk '{print $1}'`
 
-CMD="etcd -name aliyun_container_etcd3 -initial-advertise-peer-urls http://$IP:2380 \
+CMD="etcd -name aliyun_container_`hostname` -initial-advertise-peer-urls http://$IP:2380 \
 -listen-peer-urls http://$IP:2380 \
 -listen-client-urls http://$IP:2379,http://127.0.0.1:2379 \
 -advertise-client-urls http://$IP:2379 \
