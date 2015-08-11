@@ -5,7 +5,7 @@ etcd1:
     hostname: etcd1.server.com
     #env_file: ./common.env
     environment:
-        - DISCOVERY_SERVICE=https://discovery.etcd.io/16a8d8693b4e65c285e25df0f8fbb1c5
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/8563d426894599db5d4c0049d011b582
     command: /etcd/init/start_etcd.sh
 etcd2:
     image: 'etcd/base_image'
@@ -13,7 +13,7 @@ etcd2:
        - "2380:2379"
     hostname: etcd2.server.com
     environment:
-        - DISCOVERY_SERVICE=https://discovery.etcd.io/16a8d8693b4e65c285e25df0f8fbb1c5
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/8563d426894599db5d4c0049d011b582
     command: /etcd/init/start_etcd.sh
 etcd3:
     image: 'etcd/base_image'
@@ -21,5 +21,5 @@ etcd3:
        - "2381:2379"
     hostname: etcd3.server.com
     environment:
-        - DISCOVERY_SERVICE=https://discovery.etcd.io/16a8d8693b4e65c285e25df0f8fbb1c5
+        - DISCOVERY_SERVICE=https://discovery.etcd.io/8563d426894599db5d4c0049d011b582
     command: /etcd/init/start_etcd.sh

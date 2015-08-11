@@ -11,6 +11,6 @@ CMD="etcd -name aliyun_container_`hostname` -initial-advertise-peer-urls http://
 echo $CMD >> /var/log/etcd.log
 $CMD >> /var/log/etcd.log 2>&1
 
-while true; do
-   sleep 1
-done
+#while true; do
+#   sleep 1
+#done
