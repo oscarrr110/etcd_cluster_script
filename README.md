@@ -1,6 +1,6 @@
 # etcd_cluster_script
 
-## usage
+## Usage
 ```
 Format: start_etcd_cluster.sh <ROOT_PASSWORD> <NEW_USER_NAME> <NEW_USER_ROLE> <GRANT_PATH_DIR>
 Example: start_etcd_cluster.sh  1111 tuhu 0810 test
@@ -8,16 +8,14 @@ Example: start_etcd_cluster.sh  1111 tuhu 0810 test
 
 ## Star up etcd service, Include following step
 
-### build the basic image ,  which is described as Dockerfile
+### Build the basic image ,  which is described as Dockerfile
 
 Install necessary packages for etcd
 
 Add etcd and auth related scripts
 
-#### 2 get the discovery url 
+#### get the discovery url 
 
-Use Discovery way to setup etcd cluster, please refer to
-
-[runtime]: runtime-configuration.md
+Use Discovery way to setup etcd cluster, please refer to 
 
 It can also use local etcd service to discovery new node
