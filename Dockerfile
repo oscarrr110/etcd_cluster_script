@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+#FROM quay.io/coreos/etcd:v2.0.10
 RUN apt-get install -y \
     expect \
     git \

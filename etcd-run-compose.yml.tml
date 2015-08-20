@@ -1,5 +1,6 @@
 etcd1:
-    image: 'etcd/base_image'
+    image: '10.32.161.160:5000/etcd/base_image'
+#    image: 'etcd/base_image'
     ports:
        - "2382:2379"
     hostname: etcd1.server.com
@@ -8,7 +9,8 @@ etcd1:
         - DISCOVERY_SERVICE=$DISCOVERY_SERVICE
     command: /etcd/init/start_etcd.sh
 etcd2:
-    image: 'etcd/base_image'
+    image: '10.32.161.160:5000/etcd/base_image'
+#    image: 'etcd/base_image'
     ports:
        - "2380:2379"
     hostname: etcd2.server.com
@@ -16,7 +18,8 @@ etcd2:
         - DISCOVERY_SERVICE=$DISCOVERY_SERVICE
     command: /etcd/init/start_etcd.sh
 etcd3:
-    image: 'etcd/base_image'
+    image: '10.32.161.160:5000/etcd/base_image'
+#    image: 'etcd/base_image'
     ports:
        - "2381:2379"
     hostname: etcd3.server.com

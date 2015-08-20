@@ -9,6 +9,7 @@ function init_user_and_password() {
     etcdctl -u root:$ROOT_PASSWORD user grant $NEW_USER_NAME -roles $NEW_USER_ROLE
     #etcdctl -u root:$ROOT_PASSWORD role grant $NEW_USER_ROLE  -path '/\$GRANT_PATH_DIR/*' -readwrite
     etcdctl -u root:$ROOT_PASSWORD role grant $NEW_USER_ROLE  -path /$GRANT_PATH_DIR/* -readwrite
+    etcdctl -u root:$ROOT_PASSWORD role revoke guest -path '*' -readwrite
 }
 
 function cleanup() {
